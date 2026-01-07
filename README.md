@@ -91,64 +91,34 @@ The UI is designed based on provided Figma-like screens and implemented **pixel-
 
 ## Project Structure
 
-### Backend
-
----
-backend/
-├── src/
-│ ├── config/
-│ │ └── db.ts # Database connection
-│ │
-│ ├── controllers/
-│ │ ├── auth.controller.ts # Login, OTP, reset password logic
-│ │ ├── category.controller.ts
-│ │ ├── subcategory.controller.ts
-│ │ └── product.controller.ts
-│ │
-│ ├── middleware/
-│ │ ├── auth.middleware.ts # JWT authentication
-│ │ └── upload.middleware.ts # Multer image upload config
-│ │
-│ ├── models/
-│ │ ├── admin.model.ts
-│ │ ├── category.model.ts
-│ │ ├── subcategory.model.ts
-│ │ └── product.model.ts
-│ │
-│ ├── routes/
-│ │ ├── auth.routes.ts
-│ │ ├── category.routes.ts
-│ │ ├── subcategory.routes.ts
-│ │ └── product.routes.ts
-│ │
-│ ├── utils/
-│ │ └── mailer.ts # Nodemailer email utility
-│ │
-│ └── server.ts # App entry point
+Root
+├── backend/                      # Backend app (Express + TypeScript)
+│   ├── src/
+│   │   ├── config/               # DB & env config
+│   │   ├── controllers/          # Route handlers
+│   │   ├── middleware/           # Auth, upload, validators
+│   │   ├── models/               # Sequelize models
+│   │   ├── routes/               # API routes
+│   │   ├── utils/                # Mailer, helpers
+│   │   └── server.ts             # App entry
+│   ├── uploads/                  # Static image folders
+│   ├── package.json
+│   └── tsconfig.json
 │
-├── uploads/
-│ ├── categories/ # Category images
-│ ├── subcategories/ # Subcategory images
-│ └── products/ # Product images
+├── frontend/                     # Frontend app (React + TypeScript)
+│   ├── src/
+│   │   ├── components/           # Reusable UI components (Sidebar, Navbar...)
+│   │   ├── pages/                # Page-level components
+│   │   ├── routes/               # Router config
+│   │   ├── services/             # API clients (axios), auth service
+│   │   ├── context/              # React contexts (Auth)
+│   │   └── main.tsx
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.ts
 │
-├── .env # Environment variables
-├── package.json
-└── tsconfig.json
-
----
-
-### Frontend
-
-frontend/
-├─ src/
-│ ├─ components/
-│ ├─ pages/
-│ ├─ routes/
-│ ├─ services/
-│ ├─ context/
-│ └─ main.tsx
-├─ package.json
-└─ vite.config.ts
+├── .gitignore
+└── README.md
 
 ---
 
