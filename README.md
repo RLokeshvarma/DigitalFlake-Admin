@@ -93,6 +93,7 @@ The UI is designed based on provided Figma-like screens and implemented **pixel-
 
 ### Backend
 
+---
 backend/
 ├── src/
 │ ├── config/
