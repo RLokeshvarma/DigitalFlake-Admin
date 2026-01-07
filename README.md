@@ -91,6 +91,7 @@ The UI is designed based on provided Figma-like screens and implemented **pixel-
 
 ## Project Structure
 
+```txt
 Root
 ├── backend/                      # Backend app (Express + TypeScript)
 │   ├── src/
@@ -119,7 +120,7 @@ Root
 │
 ├── .gitignore
 └── README.md
-
+```
 ---
 
 ## Environment Variables
